@@ -1,10 +1,10 @@
-package com.portfolio.dab;
+package com.portfolio.hdd;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DabApplicationTests {
+class HddApplicationTests {
 
 	@Test
 	void contextLoads() {
