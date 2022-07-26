@@ -19,7 +19,8 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "boostrap": "^2.0.0",
-    "bootstrap": "^5.2.0-beta1",
+    "bootstrap": "^5.2.0",
+    "g": "^2.0.1",
     "ng-circle-progress": "^1.6.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -27,7 +28,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.4",
-    "@angular/cli": "~14.0.4",
+    "@angular/cli": "^14.1.0",
     "@angular/compiler-cli": "^14.0.0",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.1.0",
