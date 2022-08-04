@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
  * @author drpendejoloco
  */
 @Repository
-public interface RolRepository extends JpaRepository<Rol, Integer>{
+public interface iRolRepository extends JpaRepository<Rol, Integer>{
     Optional <Rol> findByRolNombre (RolNombre rolNombre);
 }
