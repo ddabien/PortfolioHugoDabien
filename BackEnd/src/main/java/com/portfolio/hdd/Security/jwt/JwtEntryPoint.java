@@ -5,6 +5,8 @@
 package com.portfolio.hdd.Security.jwt;
 
 
+import java.io.IOException;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
@@ -23,8 +25,10 @@ public class JwtEntryPoint implements AuthenticationEntryPoint{
     private final static Logger logger = LoggerFactory.getLogger(JwtEntryPoint.class);
 
     @Override
-    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)
-        logger.error("Fallo de metodo commence");
-        response.sendError(HttpServletResponce.SC_UNAUTHORIZED);
+    public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
+        logger.error("commence method failure");
+        response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
     }
-
+    
+    
+}
