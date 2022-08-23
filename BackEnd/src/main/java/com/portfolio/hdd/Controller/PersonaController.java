@@ -8,6 +8,7 @@ import com.portfolio.hdd.Entity.Persona;
 import com.portfolio.hdd.Interface.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,39 +19,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * SE importp CrossOrigin por error en el localhost port 4200
- * @author drpendejoloco
- */
-
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
-    // url:localhost/personas/traer
+    
     @GetMapping("personas/traer")
     public List<Persona> getPersona(){
         return ipersonaService.getPersona();
     }
-    // url:localhost/personas/crear "","",""
-    @PostMapping ("/personas/crear")
-    public String createPersona (@RequestBody Persona persona){
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/personas/crear")
+    public String createPersona(@RequestBody Persona persona){
         ipersonaService.savePersona(persona);
-        return "La creacion de la persona ha sido correcta";
-    } 
-    // url:localhost/personas/borrar/x
-    @DeleteMapping ("/personas/borrar/{id}")  
-    public String deletePersona (@PathVariable Long id){
-    ipersonaService.deletePersona(id);
-    return "La eliminacion de la persona ha sido correcta";
+        return "La persona fue creada correctamente";
     }
-
-    @PutMapping ("/personas/editar/{id}")
-    public Persona editPersona (@PathVariable Long id,
-            @RequestParam ("nombre") String nuevoNombre,
-            @RequestParam ("apellido") String nuevoApellido,
-            @RequestParam ("img") String nuevoImg) {
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/personas/borrar/{id}")
+    public String deletePersona(@PathVariable Long id){
+        ipersonaService.deletePersona(id);
+        return "La persona fue eliminada correctamente";
+    }
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/personas/editar/{id}")
+    public Persona editPersona(@PathVariable Long id,
+                               @RequestParam("nombre") String nuevoNombre,
+                               @RequestParam("apellido") String nuevoApellido,
+                               @RequestParam("img") String nuevoImg){
         Persona persona = ipersonaService.findPersona(id);
+        
         persona.setNombre(nuevoNombre);
         persona.setApellido(nuevoApellido);
         persona.setImg(nuevoImg);
@@ -58,5 +58,10 @@ public class PersonaController {
         ipersonaService.savePersona(persona);
         return persona;
     }
-        
+    
+    @GetMapping("personas/traer/perfil")
+    public Persona findPersona(){
+        return ipersonaService.findPersona((long)1);
+    }
+   
 }
