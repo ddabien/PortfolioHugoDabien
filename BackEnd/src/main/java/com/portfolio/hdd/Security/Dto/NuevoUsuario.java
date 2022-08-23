@@ -4,12 +4,16 @@
  */
 package com.portfolio.hdd.Security.Dto;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author drpendejoloco
  */
-import java.util.HashSet;
-import java.util.Set;
+
+
+
 
 public class NuevoUsuario {
 

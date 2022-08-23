@@ -4,12 +4,13 @@
  */
 package com.portfolio.hdd.Dto;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  *
  * @author drpendejoloco
  */
 
-import javax.validation.constraints.NotBlank;
 
 public class dtoEducacion {
     @NotBlank

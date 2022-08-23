@@ -6,6 +6,8 @@ package com.portfolio.hdd.Dto;
 
 import javax.validation.constraints.NotBlank;
 
+
+
 public class dtoExperiencia {
     @NotBlank
     private String nombreE;

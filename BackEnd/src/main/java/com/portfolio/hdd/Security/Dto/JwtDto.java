@@ -3,12 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.portfolio.hdd.Security.Dto;
+
+import java.util.Collection;
+import org.springframework.security.core.GrantedAuthority;
+
 /**
  *
  * @author drpendejoloco
  */
-import java.util.Collection;
-import org.springframework.security.core.GrantedAuthority;
+
 
 
 public class JwtDto {

@@ -4,11 +4,6 @@
  */
 package com.portfolio.hdd.Security.jwt;
 
-/**
- *
- * @author drpendejoloco
- */
-
 import com.portfolio.hdd.Security.Entity.UsuarioPrincipal;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -22,6 +17,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
+
+/**
+ *
+ * @author drpendejoloco
+ */
+
+
 
 @Component
 public class JwtProvider {

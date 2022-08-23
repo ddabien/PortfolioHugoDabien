@@ -4,11 +4,6 @@
  */
 package com.portfolio.hdd.Security.jwt;
 
-/**
- *
- * @author drpendejoloco
- */
-
 import com.portfolio.hdd.Security.Service.UserDetailsImpl;
 import java.io.IOException;
 import javax.servlet.FilterChain;
@@ -22,6 +17,13 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.filter.OncePerRequestFilter;
+
+/**
+ *
+ * @author drpendejoloco
+ */
+
+
 
 /**
  *

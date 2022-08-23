@@ -4,18 +4,13 @@
  */
 package com.portfolio.hdd.Security.Controller;
 
-/**
- *
- * @author drpendejoloco
- */
-
+import com.portfolio.hdd.Security.Dto.JwtDto;
+import com.portfolio.hdd.Security.Dto.LoginUsuario;
+import com.portfolio.hdd.Security.Dto.NuevoUsuario;
 import com.portfolio.hdd.Security.Entity.Rol;
 import com.portfolio.hdd.Security.Entity.Usuario;
 import com.portfolio.hdd.Security.Enums.RolNombre;
 import com.portfolio.hdd.Security.Service.RolService;
-import com.portfolio.hdd.Security.Dto.JwtDto;
-import com.portfolio.hdd.Security.Dto.LoginUsuario;
-import com.portfolio.hdd.Security.Dto.NuevoUsuario;
 import com.portfolio.hdd.Security.Service.UsuarioService;
 import com.portfolio.hdd.Security.jwt.JwtProvider;
 import java.util.HashSet;
@@ -27,6 +22,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -34,8 +31,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+
+/**
+ *
+ * @author drpendejoloco
+ */
 
 
 @RestController

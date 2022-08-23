@@ -4,14 +4,16 @@
  */
 package com.portfolio.hdd.Repository;
 
-/**
- *
- * @author drpendejoloco
- */
 import com.portfolio.hdd.Entity.Educacion;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+/**
+ *
+ * @author drpendejoloco
+ */
+
 
 @Repository
 public interface REducacion extends JpaRepository<Educacion, Integer>{

@@ -4,10 +4,6 @@
  */
 package com.portfolio.hdd.Service;
 
-/**
- *
- * @author drpendejoloco
- */
 import com.portfolio.hdd.Entity.Educacion;
 import com.portfolio.hdd.Repository.REducacion;
 import java.util.List;
@@ -15,6 +11,12 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+/**
+ *
+ * @author drpendejoloco
+ */
+
 
 @Service
 @Transactional

@@ -4,11 +4,12 @@
  */
 package com.portfolio.hdd.Security.Dto;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  *
  * @author drpendejoloco
  */
-import javax.validation.constraints.NotBlank;
 
 public class LoginUsuario {
     @NotBlank

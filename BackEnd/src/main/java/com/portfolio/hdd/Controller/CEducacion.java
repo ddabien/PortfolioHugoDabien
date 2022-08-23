@@ -4,10 +4,6 @@
  */
 package com.portfolio.hdd.Controller;
 
-/**
- *
- * @author drpendejoloco
- */
 import com.portfolio.hdd.Dto.dtoEducacion;
 import com.portfolio.hdd.Entity.Educacion;
 import com.portfolio.hdd.Security.Controller.Mensaje;
@@ -26,6 +22,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+/**
+ *
+ * @author drpendejoloco
+ */
+
 
 @RestController
 @RequestMapping("/educacion")
