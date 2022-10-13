@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.portfolio.hdd.Security;
 
 import com.portfolio.hdd.Security.Service.UserDetailsImpl;
@@ -17,14 +21,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-
-
-/**
- *
- * @author drpendejoloco
- */
-
 
 @Configuration
 @EnableWebSecurity
@@ -50,6 +46,7 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
                 .authorizeRequests()
+                // en vez de auth va solo "/auth/**" //
                 .antMatchers("**").permitAll()
                 .anyRequest().authenticated()
                 .and()

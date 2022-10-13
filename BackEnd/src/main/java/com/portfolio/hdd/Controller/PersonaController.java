@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.portfolio.hdd.Controller;
 
 import com.portfolio.hdd.Entity.Persona;
@@ -19,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
+//@CrossOrigin(origins = "http://localhost:4200")//
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://arg-prog-hugodabien.web.app")
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
