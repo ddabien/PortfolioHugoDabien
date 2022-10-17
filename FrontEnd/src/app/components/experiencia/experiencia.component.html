@@ -4,25 +4,34 @@
     <h1>Experiencia Laboral</h1>
     <div class = "col-lg-2"></div>
     <div class = "col-lg-10">
-        <ul>
-            <li> <h2>PONER MI PRIMER TRABAJO</h2>  - 
-            <h3> (años) </h3> </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi est laborum sint eveniet accusamus deleniti necessitatibus, illo non earum sapiente consequatur voluptates minus ducimus hic voluptatum, ea, quam itaque maiores!</p>
-
-        </ul>
-        <ul>
-            <li> <h2>PONER MI SEGUNDO TRABAJO</h2>  - 
-            <h3> (años) </h3> </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi est laborum sint eveniet accusamus deleniti necessitatibus, illo non earum sapiente consequatur voluptates minus ducimus hic voluptatum, ea, quam itaque maiores!</p>
-
-        </ul>
-        <ul>
-            <li> <h2>PONER MI TERCER TRABAJO</h2>  - 
-            <h3> (años) </h3> </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi est laborum sint eveniet accusamus deleniti necessitatibus, illo non earum sapiente consequatur voluptates minus ducimus hic voluptatum, ea, quam itaque maiores!</p>
-
-        </ul>
+        <button type="button" class="btn btn-outline-dark btn-lg px-5" routerLink="/nuevaexp" *ngIf="isLogged">
+            Agregue Experiencia
+        </button>
     </div>
 
+    <div class="col lg 2"></div>
+    <div class="col-lg-10">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Experiencia of expe">
+                    <td>
+                        <h4>{{Experiencia.nombreE}}</h4>
+                    </td>
+                    <td>{{Experiencia.descripcionE}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-outline-dark" routerLink="/editexp/{{Experiencia.id}}">
+                             Editar</button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                             Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    </div>
 
 </div>
